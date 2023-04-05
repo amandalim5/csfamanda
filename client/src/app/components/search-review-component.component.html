@@ -1,0 +1,12 @@
+<h1>Search Movie Reviews</h1>
+<form [formGroup]="searchForm" (ngSubmit)="processForm()">
+  <table>
+    <tr>
+      <td>Movie name:</td>
+      <td><input type="text" size="30" formControlName="title" /></td>
+    </tr>
+    <tr>
+      <button type="submit" [disabled]="searchForm.invalid">Search</button>
+    </tr>
+  </table>
+</form>

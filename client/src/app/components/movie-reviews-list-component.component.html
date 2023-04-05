@@ -1,0 +1,23 @@
+<p>movie-reviews-list-component works!</p>
+<p>Searching for "{{ titleName }}"</p>
+<img src="client/placeholder.jpg" />
+<div *ngFor="let r of titles; let i = index">
+  <table>
+    <tr>
+      <td *ngIf="">
+        <img src="{{ r.image }}" alt="/assets/placeholder.jpg" />
+      </td>
+      <td>
+        <a (click)="goToLink(i)"
+          ><span [innerText]="r.title"></span><span> (</span
+          ><span [innerText]="r.rating"></span><span>)</span></a
+        >
+        <p [innerText]="r.headline"></p>
+        <p [innerText]="r.summary"></p>
+        <p>Comments: <span [innerText]="r.commentCount"></span></p>
+      </td>
+    </tr>
+  </table>
+
+  <button [routerLink]="['/comment', r.title]">Comment</button>
+</div>
